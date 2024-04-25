@@ -1,0 +1,22 @@
+{
+  "name": "@eblib/ui-vue",
+  "version": "1.0.0-beta",
+  "description": "EBLib UI Library of Vue3",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:enbrau/eblib-ui-vue.git"
+  },
+  "keywords": [
+    "ui",
+    "vue"
+  ],
+  "author": "enbrau",
+  "license": "MIT",
+  "dependencies": {
+    "@eblib/core": "^1.0.0-beta"
+  }
+}
