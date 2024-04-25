@@ -1,26 +1,13 @@
 {
-  "name": "@eblib/ui-vue",
-  "version": "1.0.0-beta",
-  "description": "EBLib UI Library of Vue3",
-  "main": "index.js",
+  "name": "examples",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib ./components/index.js",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:enbrau/eblib-ui-vue.git"
-  },
-  "keywords": [
-    "vue",
-    "ui",
-    "components"
-  ],
-  "author": "enbrau",
-  "license": "MIT",
   "dependencies": {
-    "@eblib/core": "^1.0.0-beta",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
