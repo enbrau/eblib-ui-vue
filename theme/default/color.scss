@@ -5,11 +5,11 @@
     --eb-text-color: #333333;
     --eb-text-color-primary: #000000;
     --eb-text-color-secondery: #666666;
-    // --eb-color-primary: ''
-    // --eb-color-success: ''
-    // --eb-color-danger: ''
-    // --eb-color-warning: ''
-    // --eb-color-info: ''
+    --eb-color-primary: #00A7DA;
+    --eb-color-success: #59E6A9;
+    --eb-color-danger: #F2737C;
+    --eb-color-warning: #EF972C;
+    --eb-color-info: #99AEBB;
   }
 
   body.dark {
@@ -19,4 +19,3 @@
     --eb-text-color-primary: #E5EAF3;
     --eb-text-color-secondery: #A3A6AD;
   }
-

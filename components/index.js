@@ -1,6 +1,9 @@
 import '../theme/index.scss'
+
+import EbButton from './eb-button'
 import EbDemo from './eb-demo'
-const components = { EbDemo }
+
+const components = { EbButton, EbDemo }
 
 const install = function (Vue) {
   if (install.installed) return;
