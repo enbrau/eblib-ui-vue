@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+const path = require('path')
 module.exports = defineConfig({
   transpileDependencies: true,
   chainWebpack: (config) => {
@@ -10,5 +11,14 @@ module.exports = defineConfig({
       })
       return definitions
     })
-  }
+  },
+  // resolve problem: Cannot read properties of null (reading ‘isCE‘) at renderSlot
+  configureWebpack: {
+     resolve: {
+       symlinks: false,
+       alias: {
+         vue: path.resolve("./node_modules/vue"),
+       }
+     }
+   }
 })
