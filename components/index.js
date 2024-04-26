@@ -1,4 +1,4 @@
-import EbDemo from './demo'
+import EbDemo from './eb-demo'
 const components = { EbDemo }
 
 const install = function (Vue) {

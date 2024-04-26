@@ -4,7 +4,6 @@
   "description": "EBLib UI Library of Vue3",
   "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib ./components/index.js",
     "lint": "vue-cli-service lint"
   },
