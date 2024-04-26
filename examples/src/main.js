@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import EbDemo from '../../components/eb-demo'
+import EBLibUI from '../../components'
 import App from './App.vue'
 
 createApp(App)
-  .use(EbDemo)
+  .use(EBLibUI)
   .mount('#app')
