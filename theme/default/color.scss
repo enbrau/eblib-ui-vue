@@ -1,0 +1,22 @@
+
+  :root {
+    color-scheme: light;
+    --eb-bg-color: #ffffff;
+    --eb-text-color: #333333;
+    --eb-text-color-primary: #000000;
+    --eb-text-color-secondery: #666666;
+    // --eb-color-primary: ''
+    // --eb-color-success: ''
+    // --eb-color-danger: ''
+    // --eb-color-warning: ''
+    // --eb-color-info: ''
+  }
+
+  body.dark {
+    color-scheme: dark;
+    --eb-bg-color: #0a0a0a;
+    --eb-text-color: #E5EAF3;
+    --eb-text-color-primary: #E5EAF3;
+    --eb-text-color-secondery: #A3A6AD;
+  }
+

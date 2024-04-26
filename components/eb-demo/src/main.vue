@@ -1,6 +1,6 @@
 <template>
   <div class="contain">
-    <h1>eb-demo</h1>
+    <h1 class="test">eb-demo</h1>
   </div>
 </template>
 
@@ -10,8 +10,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .contain {
-  background: yellow;
+  background: var(--eb-bg-color);
+  .test {
+    color: var(--eb-text-color);
+  }
 }
 </style>

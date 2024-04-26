@@ -1,3 +1,4 @@
+import '../theme/index.scss'
 import EbDemo from './eb-demo'
 const components = { EbDemo }
 
