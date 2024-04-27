@@ -1,14 +1,19 @@
+import eblib from '@eblib/core'
+
 import '../theme/index.scss'
 
 import EbButton from './eb-button'
-import EbDemo from './eb-demo'
+import EbExample from './eb-example'
 
-const components = { EbButton, EbDemo }
+const components = { EbButton, EbExample }
 
 const install = function (Vue) {
   if (install.installed) return;
   Object.keys(components).forEach((key) => {
     Vue.component(components[key].name, components[key])
+  })
+  Object.keys(eblib).forEach((key) => {
+    Vue.config.globalProperties['$' + key] = eblib[key]
   })
 }
 

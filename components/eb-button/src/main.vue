@@ -61,19 +61,47 @@ $colors: primary, success, danger, warning, info;
   border-radius: 2px;
   border: 1px solid transparent;
   cursor: pointer;
+  transition: ease-in-out .3s;
+
+  &.is-round {
+    border-radius: 18px;
+  }
 
   @each $color in $colors {
     &.eb-button--#{$color} {
       color: #fff;
       border-color: var(--eb-color-#{$color});
       background-color: var(--eb-color-#{$color});
+
+      &:hover {
+        background-color: var(--eb-color-#{$color}-light5);
+        border-color: var(--eb-color-#{$color}-light5);
+      }
+
       &.is-plain {
         color: var(--eb-color-#{$color});
+        background-color: transparent;
+
+        &:hover {
+          background-color: var(--eb-color-#{$color}-light9);
+        }
       }
+
       &.is-text {
         color: var(--eb-color-#{$color});
+        background-color: transparent;
+        border-color: transparent;
+
+        &:hover {
+          background-color: var(--eb-color-info-light9);
+          border-color: var(--eb-color-info-light9);
+        }
       }
     }
   }
+}
+
+.eb-button+.eb-button {
+  margin-left: 10px;
 }
 </style>

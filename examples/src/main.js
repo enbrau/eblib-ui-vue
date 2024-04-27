@@ -2,6 +2,6 @@ import { createApp } from 'vue'
 import EBLibUI from '../../components'
 import App from './App.vue'
 
-createApp(App)
+const app = createApp(App)
   .use(EBLibUI)
-  .mount('#app')
+app.mount('#app')

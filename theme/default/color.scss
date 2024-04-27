@@ -1,21 +1,58 @@
+@function increase-brightness($color, $percentage) {
+  $hsl-color: hsl(
+    hue($color),
+    saturation($color),
+    $percentage
+  );
+  @return $hsl-color;
+}
 
-  :root {
-    color-scheme: light;
-    --eb-bg-color: #ffffff;
-    --eb-text-color: #333333;
-    --eb-text-color-primary: #000000;
-    --eb-text-color-secondery: #666666;
-    --eb-color-primary: #00A7DA;
-    --eb-color-success: #59E6A9;
-    --eb-color-danger: #F2737C;
-    --eb-color-warning: #EF972C;
-    --eb-color-info: #99AEBB;
-  }
+$color-info: #99AEBB;
+$color-primary: #00A7DA;
+$color-success: #59E6A9;
+$color-danger: #F2737C;
+$color-warning: #EF972C;
 
-  body.dark {
-    color-scheme: dark;
-    --eb-bg-color: #0a0a0a;
-    --eb-text-color: #E5EAF3;
-    --eb-text-color-primary: #E5EAF3;
-    --eb-text-color-secondery: #A3A6AD;
+$base-color-names: primary, success, danger, warning, info;
+
+
+:root {
+  color-scheme: light;
+  --eb-bg-color: #ffffff;
+  --eb-text-color: #333333;
+  --eb-text-color-primary: #000000;
+  --eb-text-color-secondery: #666666;
+  --eb-border-color: #dcdfe6;
+
+  @each $color-name in $base-color-names {
+    $base-color: $color-info;
+    @if $color-name == primary {
+      $base-color: $color-primary;
+    }
+    @if $color-name == success {
+      $base-color: $color-success;
+    }
+    @if $color-name == warning {
+      $base-color: $color-warning;
+    }
+    @if $color-name == danger {
+      $base-color: $color-danger;
+    }
+    --eb-color-#{$color-name}: #{$base-color};
+    @for $i from 1 through 9 {
+      --eb-color-#{$color-name}-light#{$i}: #{mix($base-color, white, 100% - 8% * $i)};
+    }
+    @for $i from 1 through 9 {
+      --eb-color-#{$color-name}-dark#{$i}: #{mix($base-color, black, 100% - 8% * $i)};
+    }
   }
+}
+
+body.dark {
+  color-scheme: dark;
+  --eb-bg-color: #0a0a0a;
+  --eb-text-color: #E5EAF3;
+  --eb-text-color-primary: #E5EAF3;
+  --eb-text-color-secondery: #A3A6AD;
+  --eb-border-color: #dcdfe6;
+}
