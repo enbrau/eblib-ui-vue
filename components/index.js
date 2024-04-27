@@ -2,10 +2,12 @@ import eblib from '@eblib/core'
 
 import '../theme/index.scss'
 
+import EbRow from './eb-row'
+import EbCol from './eb-col'
 import EbButton from './eb-button'
 import EbExample from './eb-example'
 
-const components = { EbButton, EbExample }
+const components = { EbRow, EbCol, EbButton, EbExample }
 
 const install = function (Vue) {
   if (install.installed) return;
