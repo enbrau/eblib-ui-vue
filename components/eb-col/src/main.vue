@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss">
 .eb-col {
-
+  
 }
 
 @for $i from 1 through 24 {
@@ -90,7 +90,7 @@ export default {
     }
   }
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (min-width: 992px) {
     .eb-col-sm-#{$i} {
       max-width: #{$i / 24 * 100%};
       flex: 0 0 #{$i / 24 * 100%};
@@ -101,7 +101,7 @@ export default {
     }
   }
 
-  @media only screen and (max-width: 1119px) {
+  @media only screen and (min-width: 1200px) {
     .eb-col-md-#{$i} {
       max-width: #{$i / 24 * 100%};
       flex: 0 0 #{$i / 24 * 100%};
@@ -112,7 +112,7 @@ export default {
     }
   }
 
-  @media only screen and (max-width: 1919px) {
+  @media only screen and (min-width: 1920px) {
     .eb-col-lg-#{$i} {
       max-width: #{$i / 24 * 100%};
       flex: 0 0 #{$i / 24 * 100%};
