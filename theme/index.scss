@@ -43,3 +43,19 @@ p, h1, h2, h3, h4, h5, h6 {
 
 @import url("./default/color.scss");
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: var(--eb-color-info);
+  opacity: .4;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color:  var(--eb-color-info-light9);
+}
