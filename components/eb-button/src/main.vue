@@ -27,6 +27,10 @@ export default {
       type: Boolean,
       default: false
     },
+    dashed: {
+      type: Boolean,
+      default: false
+    },
     type: {
       type: String,
       default: 'info'
@@ -44,7 +48,8 @@ export default {
         'is-disabled': this.disabled,
         'is-text': this.text,
         'is-plain': this.plain,
-        'is-round': this.round
+        'is-round': this.round,
+        'is-dashed': this.dashed
       }
     }
   },
@@ -137,7 +142,7 @@ $colors: primary, success, danger, warning, info;
         border-color: var(--eb-color-#{$color}-light7);
       }
 
-      &.is-plain {
+      &.is-plain, &.is-dashed {
         color: var(--eb-color-#{$color});
         background-color: transparent;
 
@@ -150,6 +155,10 @@ $colors: primary, success, danger, warning, info;
           color: var(--eb-color-#{$color}-light7);
           border-color: var(--eb-color-#{$color}-light7);
         }
+      }
+
+      &.is-dashed {
+        border-style: dashed;
       }
 
       &.is-text {
