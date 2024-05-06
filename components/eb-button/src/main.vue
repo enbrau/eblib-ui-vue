@@ -112,7 +112,7 @@ $colors: primary, success, danger, warning, info;
   &.is-round {
     border-radius: 18px;
 
-    .ripple {
+    .wave {
       border-radius: 23px;
     }
   }
