@@ -30,6 +30,10 @@ export default {
     type: {
       type: String,
       default: 'info'
+    },
+    animation: {
+      type: String,
+      default: 'wave'
     }
   },
   computed: {
@@ -45,32 +49,45 @@ export default {
     }
   },
   methods: {
-    handleClick(event) {
+    handleClick(evt) {
       if (this.disabled)  {
         return
       }
 
       this.$emit('click')
-    
+
       const btn = this.$refs.btn
-
-      const circle = document.createElement('span')
-      const diameter = Math.max(btn.clientWidth, btn.clientHeight)
-      const radius = diameter / 2
-
-      circle.style.width = circle.style.height = `${diameter}px`
-      circle.style.left  = `${event.clientX - btn.offsetLeft - radius}px`
-      circle.style.right = `${event.clientY - btn.offsetTop - radius}px`
-      circle.classList.add('wave')
-
-      const oldWave = btn.getElementsByClassName('wave')[0]
-
-      if (oldWave) {
-        oldWave.remove()
-      }
-
-      btn.appendChild(circle)
+      playAnimation(btn, evt, this.animation)
     }
+  }
+}
+
+function playAnimation(btn, evt, animation) {
+  let span = null
+  let diameter, radius
+  switch(animation) {
+    case 'ripple':
+      btn.style.overflow = 'hidden'
+      span =  document.createElement('span')
+      diameter = Math.max(btn.clientWidth, btn.clientHeight)
+      radius = diameter / 2
+      span.style.width = span.style.height = `${diameter}px`
+      span.style.left  = `${evt.clientX - btn.offsetLeft - radius}px`
+      span.style.right = `${evt.clientY - btn.offsetTop - radius}px`
+      break
+    case 'wave':
+      span =  document.createElement('span')
+      break
+  }
+  if (span) {
+    span.classList.add(animation)
+
+    const old = btn.getElementsByClassName(animation)[0]
+    if (old) {
+      old.remove()
+    }
+
+    btn.appendChild(span)
   }
 }
 </script>
@@ -81,7 +98,6 @@ $colors: primary, success, danger, warning, info;
 .eb-button {
   position: relative;
   display: inline-flex;
-  overflow: hidden;
   height: 36px;
   padding: 0 15px;
   align-items: center;
@@ -95,6 +111,10 @@ $colors: primary, success, danger, warning, info;
 
   &.is-round {
     border-radius: 18px;
+
+    .ripple {
+      border-radius: 23px;
+    }
   }
 
   &.is-disabled {
@@ -148,18 +168,30 @@ $colors: primary, success, danger, warning, info;
           color: var(--eb-color-#{$color}-light7);
         }
 
-        .wave {
+        .ripple {
           background-color: var(--eb-color-info);
         }
       }
 
-      .wave {
+      .ripple {
         position: absolute;
         border-radius: 50%;
-        transform: scale(0);
-        animation: wave 600ms linear;
+        transform: scale(1);
+        animation: ripple 600ms forwards;
         background-color: var(--eb-color-#{$color});
         opacity: .7;
+      }
+
+      .wave {
+        position: absolute;
+        transform: scale(1);
+        top: -5px;
+        bottom: -5px;
+        left: -5px;
+        right: -5px;
+        animation: wave 800ms forwards;
+        border: 5px solid var(--eb-color-#{$color});
+        opacity: .3;
       }
     }
   }
@@ -169,9 +201,15 @@ $colors: primary, success, danger, warning, info;
   margin-left: 10px;
 }
 
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
 @keyframes wave {
   to {
-    transform: scale(4);
     opacity: 0;
   }
 }
