@@ -41,7 +41,7 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-@import url("./default/color.scss");
+@import "./default/color.scss";
 
 ::-webkit-scrollbar {
   width: 6px;

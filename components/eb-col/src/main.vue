@@ -71,8 +71,8 @@ export default {
 
 @for $i from 1 through 24 {
   .eb-col-#{$i} {
-    max-width: #{$i / 24 * 100%};
-    flex: 0 0 #{$i / 24 * 100%};
+    max-width: calc(#{$i} / 24 * 100%);
+    flex: 0 0 calc(#{$i} / 24 * 100%);
 
     &.is-guttered {
       display: block;
@@ -81,8 +81,8 @@ export default {
 
   @media only screen and (max-width: 767px) {
     .eb-col-xs-#{$i} {
-      max-width: #{$i / 24 * 100%};
-      flex: 0 0 #{$i / 24 * 100%};
+      max-width: calc(#{$i} / 24 * 100%);
+      flex: 0 0 calc(#{$i} / 24 * 100%);
 
       &.is-guttered {
         display: block;
@@ -92,8 +92,8 @@ export default {
 
   @media only screen and (min-width: 992px) {
     .eb-col-sm-#{$i} {
-      max-width: #{$i / 24 * 100%};
-      flex: 0 0 #{$i / 24 * 100%};
+      max-width: calc(#{$i} / 24 * 100%);
+      flex: 0 0 calc(#{$i} / 24 * 100%);
 
       &.is-guttered {
         display: block;
@@ -103,8 +103,8 @@ export default {
 
   @media only screen and (min-width: 1200px) {
     .eb-col-md-#{$i} {
-      max-width: #{$i / 24 * 100%};
-      flex: 0 0 #{$i / 24 * 100%};
+      max-width: calc(#{$i} / 24 * 100%);
+      flex: 0 0 calc(#{$i} / 24 * 100%);
 
       &.is-guttered {
         display: block;
@@ -114,8 +114,8 @@ export default {
 
   @media only screen and (min-width: 1920px) {
     .eb-col-lg-#{$i} {
-      max-width: #{$i / 24 * 100%};
-      flex: 0 0 #{$i / 24 * 100%};
+      max-width: calc(#{$i} / 24 * 100%);
+      flex: 0 0 calc(#{$i} / 24 * 100%);
 
       &.is-guttered {
         display: block;
@@ -125,8 +125,8 @@ export default {
 
   @media only screen and (min-width: 1920px) {
     .eb-col-xl-#{$i} {
-      max-width: #{$i / 24 * 100%};
-      flex: 0 0 #{$i / 24 * 100%};
+      max-width: calc(#{$i} / 24 * 100%);
+      flex: 0 0 calc(#{$i} / 24 * 100%);
 
       &.is-guttered {
         display: block;
