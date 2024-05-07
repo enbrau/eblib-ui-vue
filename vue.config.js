@@ -4,8 +4,12 @@ module.exports = defineConfig({
   module: {
     rules: [
       {
-        test: /\.sass$/,
-        loaders: ['style', 'css', 'sass']
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   }

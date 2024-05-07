@@ -31,6 +31,9 @@ export default {
       type: Boolean,
       default: false
     },
+    /**
+     * type of the button
+     */
     type: {
       type: String,
       default: 'info'
