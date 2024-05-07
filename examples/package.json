@@ -12,7 +12,7 @@
   "dependencies": {
     "@eblib/core": "^1.0.0-beta",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.44"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -20,13 +20,17 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "@vuepress/bundler-webpack": "^2.0.0-rc.9",
+    "@vuepress/bundler-vite": "^2.0.0-rc.9",
+    "@vuepress/plugin-container": "^2.0.0-rc.25",
+    "@vuepress/plugin-register-components": "^2.0.0-rc.21",
     "@vuepress/theme-default": "^2.0.0-rc.26",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "less-loader": "^12.2.0",
     "node-sass": "^9.0.0",
     "sass-loader": "^14.2.1",
-    "vuepress": "^2.0.0-rc.9"
+    "vuepress": "^2.0.0-rc.9",
+    "vuepress-plugin-search-pro": "^2.0.0-rc.38"
   },
   "eslintConfig": {
     "root": true,

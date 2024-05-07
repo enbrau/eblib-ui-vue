@@ -3,8 +3,13 @@ import { defineClientConfig } from 'vuepress/client'
 import EbLibUI from '../../../components/index.js'
 
 export default defineClientConfig({
-  enhance({ app, router, siteData }) {
-    app.use(EbLibUI)
+  async enhance({ app }) {
+    if (!__VUEPRESS_SSR__) {
+      const EbLibUI = await import('../../../components/index.js')
+      app.use(EbLibUI.default)
+    } else {
+      app.use(EbLibUI)
+    }
   },
   setup() {},
   rootComponents: [],

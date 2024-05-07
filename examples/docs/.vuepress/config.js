@@ -1,11 +1,23 @@
-import { webpackBundler } from '@vuepress/bundler-webpack'
+import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
+import { searchProPlugin } from "vuepress-plugin-search-pro"
+
+import pkg from '../../../package.json'
+
 export default defineUserConfig({
+  base: '/doc/eblib-ui-vue/',
+  title: pkg.name,
+  description: pkg.description,
   lang: 'zh-CN',
-  title: '你好， VuePress ！',
-  description: '这是我的第一个 VuePress 站点',
-  bundler: webpackBundler(),
+  markdown: {
+    lineNumbers: true
+  },
+  dest: '../doc/eblib-ui-vue',
+  bundler: viteBundler(),
   theme: defaultTheme(),
+  plugins: [
+    searchProPlugin({})
+  ]
 })
