@@ -9,10 +9,14 @@ html, body {
 }
 
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
   background-color: var(--eb-bg-color);
   color: var(--eb-text-color);
+  font-size: var(--eb-font-size-base);
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   &.light {
     color-scheme: light;
@@ -41,6 +45,12 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+:root {
+  --eb-font-size-base: 14px;
+  --eb-font-size-small: 13px;
+  --eb-font-size-extra-small: 12px;
+}
+
 @import "./default/color.scss";
 
 ::-webkit-scrollbar {
@@ -58,4 +68,16 @@ p, h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-track {
   border-radius: 0px;
   background-color:  var(--eb-color-info-light9);
+}
+
+.eb-bordered {
+  border: 1px solid var(--eb-border-color);
+
+  &.dashed {
+    border-style: dashed;
+  }
+
+  &.dotted {
+    border-style: dotted;
+  }
 }

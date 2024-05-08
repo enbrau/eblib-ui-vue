@@ -41,3 +41,4 @@ cypress/videos/*
 tmp
 doc
 *storybook.log
+storybook-static
