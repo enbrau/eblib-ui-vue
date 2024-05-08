@@ -8,8 +8,9 @@ import EbButton from './eb-button'
 import EbExample from './eb-example'
 
 import EbCamera from './eb-camera'
+import EbCameraInvoker from './eb-camera-invoker'
 
-const components = { EbRow, EbCol, EbButton, EbExample, EbCamera }
+const components = { EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker }
 
 const install = function (Vue) {
   if (install.installed) return;
