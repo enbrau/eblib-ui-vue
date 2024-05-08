@@ -24,6 +24,7 @@
     "@eblib/core": "^1.0.0-beta",
     "core-js": "^3.8.3",
     "interactjs": "^1.10.27",
+    "jsqr": "^1.4.0",
     "vue": "^3.2.13"
   },
   "devDependencies": {
