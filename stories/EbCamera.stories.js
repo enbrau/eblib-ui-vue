@@ -1,5 +1,3 @@
-import { fn } from '@storybook/test'
-
 import '../theme/index.scss'
 import EbCamera from '../components/eb-camera/src/main.vue'
 

@@ -1,8 +1,5 @@
-import { fn } from '@storybook/test'
-
 import '../theme/index.scss'
 import EbCameraInvoker from '../components/eb-camera-invoker/src/main.vue'
-import { ref } from 'vue';
 
 export default {
   title: 'EBLib-UI/Complex/EbCameraInvoker',
@@ -14,17 +11,16 @@ export default {
   render: (args) => ({
     components: { EbCameraInvoker },
     setup() {
-      const result = ref(null)
-      return { args, result };
+      return { args };
     },
     methods: {
       handlePhotoTaken(result) {
-        this.result = result
+        console.log(result)
+        alert('photo taken')
       }
     },
     template: `
-      <eb-camera-invoker @onPhotoTaken="handlePhotoTaken" /><br>
-      {{ result }}
+      <eb-camera-invoker @onPhotoTaken="handlePhotoTaken" />
     `
   })
 };

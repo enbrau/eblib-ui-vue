@@ -36,7 +36,7 @@ export default {
      */
     type: {
       type: String,
-      default: 'info'
+      default: 'primary'
     },
     animation: {
       type: String,
