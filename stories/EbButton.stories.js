@@ -1,5 +1,3 @@
-import { fn } from '@storybook/test'
-
 import '../theme/index.scss'
 import EbButton from '../components/eb-button/src/main.vue'
 
