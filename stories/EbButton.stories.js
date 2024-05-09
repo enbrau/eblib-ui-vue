@@ -6,23 +6,36 @@ export default {
   component: EbButton,
   tags: ['autodocs'],
   argTypes: {
-    type: { control: { type: 'select' }, options: ['info', 'primary', 'danger', 'warning', 'success'] },
-    animation: { control: { type: 'select' }, options: ['wave', 'ripple', ''] }
+    size: { control: { type: 'select' }, options: ['large', 'default', 'small'] },
+    animation: { control: { type: 'select' }, options: ['wave', 'ripple', false] }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: {},
+  args: {
+    disabled: false,
+    plain: false,
+    dashed: false,
+    text: false,
+    round: false,
+    animation: 'wave'
+  },
   render: (args) => ({
     components: { EbButton },
     setup() {
       const types = ['info', 'primary', 'danger', 'warning', 'success']
-      return { args, types };
+      return { args, types }
     },
     template: `
       <div>
-        <eb-button v-for="type in types" :key="type" :type="type">{{type}}</eb-button>
-      </div>
-      <div style="margin-top: 10px">
-        <eb-button v-for="type in types" :key="type" :type="type" disabled>{{type}}</eb-button>
+        <eb-button v-for="type in types" :key="type" 
+          :disabled="args.disabled" 
+          :plain="args.plain"
+          :text="args.text"
+          :round="args.round"
+          :dashed="args.dashed"
+          :size="args.size" 
+          :type="type"
+          :animation="args.animation"
+        >{{type}}</eb-button>
       </div>
     `
   })
