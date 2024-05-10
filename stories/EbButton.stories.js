@@ -1,5 +1,4 @@
-import '../theme/index.scss'
-import EbButton from '../components/eb-button/src/main.vue'
+import { EbButton } from '../components/index.js'
 import eblib from '@eblib/core'
 
 export default {
