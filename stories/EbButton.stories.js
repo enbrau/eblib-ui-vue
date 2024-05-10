@@ -1,5 +1,4 @@
-import { EbButton } from '../components/index.js'
-import eblib from '@eblib/core'
+import { EbButton, eblib } from '../components/index.js'
 
 export default {
   title: 'EBLib-UI/General/EbButton',
