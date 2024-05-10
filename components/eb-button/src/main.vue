@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { sizeSupport, typeSupport } from '../../mixin.js'
+import { sizeSupport, typeSupport } from '../../mixin.ts'
 
 export default {
   name: 'EbButton',

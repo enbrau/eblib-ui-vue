@@ -51,6 +51,8 @@
     "node-sass": "^9.0.0",
     "sass-loader": "^14.2.1",
     "storybook": "^8.0.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
     "vue-loader": "^17.4.2"
   },
   "eslintConfig": {
