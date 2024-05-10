@@ -1,5 +1,6 @@
 import '../theme/index.scss'
 import EbButton from '../components/eb-button/src/main.vue'
+import eblib from '@eblib/core'
 
 export default {
   title: 'EBLib-UI/Basic/EbButton',
@@ -16,13 +17,14 @@ export default {
     dashed: false,
     text: false,
     round: false,
-    animation: 'wave'
+    animation: 'wave',
+    loading: false
   },
   render: (args) => ({
     components: { EbButton },
     setup() {
       const types = ['info', 'primary', 'danger', 'warning', 'success']
-      return { args, types }
+      return { args, types, eblib }
     },
     template: `
       <div>
@@ -35,7 +37,8 @@ export default {
           :size="args.size" 
           :type="type"
           :animation="args.animation"
-        >{{type}}</eb-button>
+          :loading="args.loading"
+        >{{eblib.format.toCamelCase(type, true)}}</eb-button>
       </div>
     `
   })

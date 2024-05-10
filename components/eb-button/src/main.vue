@@ -1,36 +1,29 @@
 <template>
   <button ref="btn" :class="classNames" @click.prevent="handleClick">
+    <slot name="loading">
+      <span v-if="loading" class="eb-button--spinner"></span>
+    </slot>
     <slot></slot>
   </button>
 </template>
 
 <script>
+import { sizeSupport, typeSupport } from '../../mixin.js'
+
 export default {
   name: 'EbButton',
   emits: ['click'],
+  mixins: [ sizeSupport, typeSupport ],
   props: {
     /**
-     * button type
+     * determine whether it's in loading state
      */
-    type: {
-      type: String,
-      default: 'primary',
-      validator(value) {
-        return ['info', 'primary', 'success', 'warning', 'danger'].includes(value)
-      }
+    loading: {
+      type: Boolean,
+      default: false
     },
     /**
-     * button size
-     */
-    size: {
-      type: String,
-      default: 'default',
-      validator(value) {
-        return ['large', 'default', 'small'].includes(value)
-      }
-    },
-    /**
-     * disable the button
+     * determine whether it's in disabled state
      */
     disabled: {
       type: Boolean,
@@ -79,17 +72,18 @@ export default {
         [`eb-button--${this.type}`]: true,
         'eb-button--large': this.size === 'large',
         'eb-button--small': this.size === 'small',
-        'is-disabled': this.disabled,
+        'is-disabled': this.disabled || this.loading,
         'is-text': this.text,
         'is-plain': this.plain || this.dashed,
         'is-round': this.round,
-        'is-dashed': this.dashed
+        'is-dashed': this.dashed,
+        'is-loading': this.loading
       }
     }
   },
   methods: {
     handleClick(evt) {
-      if (this.disabled)  {
+      if (this.disabled || this.loading)  {
         return
       }
 
@@ -252,6 +246,61 @@ $colors: primary, success, danger, warning, info;
         border: 5px solid var(--eb-color-#{$color});
         opacity: .2;
       }
+    }
+  }
+
+  .eb-button--spinner {
+    width: 0;
+    height: 0;
+    transform: .2s linear;
+  }
+
+  &.is-loading .eb-button--spinner {
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+    margin-right: 5px;
+
+    &::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      border: 1.5px solid #fff;
+      animation: prixClipFix 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      100%   {transform: rotate(360deg)}
+    }
+
+    @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+  }
+
+  &--large .eb-button--spinner {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--small .eb-button--spinner {
+    width: 12px;
+    height: 12px;
+  }
+
+  @each $color in $colors {
+    &.eb-button--#{$color}.is-disabled.is-plain .eb-button--spinner::before, 
+    &.eb-button--#{$color}.is-disabled.is-text .eb-button--spinner::before {
+      border-color: var(--eb-color-#{$color});
     }
   }
 }
