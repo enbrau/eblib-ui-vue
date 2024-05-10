@@ -26,7 +26,6 @@ export default {
   }
 }
 
-export { 
-  EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker
+export {
+  eblib, EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker
 }
-
