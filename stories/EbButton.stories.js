@@ -3,7 +3,7 @@ import EbButton from '../components/eb-button/src/main.vue'
 import eblib from '@eblib/core'
 
 export default {
-  title: 'EBLib-UI/Basic/EbButton',
+  title: 'EBLib-UI/General/EbButton',
   component: EbButton,
   tags: ['autodocs'],
   argTypes: {
