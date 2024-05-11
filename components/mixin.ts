@@ -27,3 +27,30 @@ export const typeSupport = {
     }
   }
 }
+
+export const modelValueSupportString = {
+  emits: ['update:modelValue'],
+  props: {
+    modelValue: {
+      type: String
+    }
+  }
+}
+
+export const modelValueSupportNumber = {
+  emits: ['update:modelValue'],
+  props: {
+    modelValue: {
+      type: Number
+    }
+  }
+}
+
+export const modelValueSupportBoolean = {
+  emits: ['update:modelValue'],
+  props: {
+    modelValue: {
+      type: Boolean
+    }
+  }
+}
