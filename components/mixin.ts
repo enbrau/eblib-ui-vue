@@ -6,7 +6,7 @@ export const sizeSupport = {
     size: {
       type: String,
       default: 'default',
-      validator(value) {
+      validator(value: string): boolean {
         return ['small', 'default', 'large'].includes(value)
       }
     }
@@ -21,7 +21,7 @@ export const typeSupport = {
     type: {
       type: String,
       derault: 'primary',
-      validator(value) {
+      validator(value: string): boolean {
         return ['info', 'primary', 'success', 'warning', 'danger'].includes(value)
       }
     }

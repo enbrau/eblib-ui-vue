@@ -14,7 +14,7 @@
 
 <script>
 import { ref } from 'vue'
-import jsQR from 'jsqr'
+// import jsQR from 'jsqr'
 
 import EbButton from '../../eb-button/src/main.vue'
 
@@ -123,8 +123,8 @@ export default {
       const video = this.$refs.video
 
       const videoRatio  = video.videoHeight / video.videoWidth
-      const videoWidth  = video.clientWidth
-      const videoHeight = video.clientHeight
+      // const videoWidth  = video.clientWidth
+      // const videoHeight = video.clientHeight
       const videoTrueRatio = video.clientWidth / video.clientHeight
       let videoTrueWidth = video.videoWidth
       let videoTrueHeight = video.videoHeight
@@ -150,15 +150,15 @@ export default {
       if (this.face) {
         // 如果是，则翻转图片
         var cxt = canvas.getContext('2d')
-            cxt.translate($canvas.width, 0);
+            cxt.translate(this.canvas.width, 0);
             cxt.scale(-1, 1);
             // 绘制视频
-            cxt.drawImage($video, sX, sY, videoTrueWidth, videoTrueHeight, 0, 0, canvas.width, canvas.height);
+            cxt.drawImage(this.video, sX, sY, videoTrueWidth, videoTrueHeight, 0, 0, canvas.width, canvas.height);
             //翻转回来
-            cxt.translate($canvas.width, 0);
+            cxt.translate(this.canvas.width, 0);
             cxt.scale(-1, 1);
       } else {
-        canvas.getContext('2d').drawImage($video, sX, sY, videoTrueWidth, videoTrueHeight, 0, 0, canvas.width, canvas.height)
+        canvas.getContext('2d').drawImage(this.video, sX, sY, videoTrueWidth, videoTrueHeight, 0, 0, canvas.width, canvas.height)
       }
     },
     handleScan() {
