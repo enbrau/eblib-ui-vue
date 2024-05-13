@@ -41,11 +41,12 @@
     "@storybook/test": "^8.0.10",
     "@storybook/vue3": "^8.0.10",
     "@storybook/vue3-webpack5": "^8.0.10",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/compiler-sfc": "^3.4.27",
-    "eslint": "^7.32.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-vue": "^8.0.3",
     "node-sass": "^9.0.0",
@@ -65,8 +66,9 @@
       "eslint:recommended",
       "plugin:storybook/recommended"
     ],
+    "parser": "vue-eslint-parser",
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@typescript-eslint/parser"
     },
     "rules": {}
   },
