@@ -10,8 +10,11 @@ import EbExample from './eb-example'
 import EbCamera from './eb-camera'
 import EbCameraInvoker from './eb-camera-invoker'
 
+import EbTable from './eb-table/src/EbTable.vue'
+import EbTableColumn from './eb-table/src/EbTableColumn'
+
 const components = { 
-  EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker 
+  EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker, EbTable, EbTableColumn
 }
 
 export default {
@@ -27,5 +30,5 @@ export default {
 }
 
 export {
-  eblib, EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker
+  eblib, EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker, EbTable, EbTableColumn
 }

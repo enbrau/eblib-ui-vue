@@ -1,0 +1,83 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+.eb-table--wrapper {
+  .eb-table {
+    width: 100%;
+    max-width: 100%;
+  }
+  .eb-table > thead > tr > th,
+  .eb-table > tbody > tr > th,
+  .eb-table > tfoot > tr > th,
+  .eb-table > thead > tr > td,
+  .eb-table > tbody > tr > td,
+  .eb-table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid var(--eb-border-color);
+  }
+  .eb-table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--eb-border-color);
+  }
+  .eb-table > caption + thead > tr:first-child > th,
+  .eb-table > colgroup + thead > tr:first-child > th,
+  .eb-table > thead:first-child > tr:first-child > th,
+  .eb-table > caption + thead > tr:first-child > td,
+  .eb-table > colgroup + thead > tr:first-child > td,
+  .tabeb-tablele > thead:first-child > tr:first-child > td {
+    border-top: 0;
+  }
+  .eb-table > tbody + tbody {
+    border-top: 2px solid var(--eb-border-color);
+  }
+  .eb-table--bordered {
+    border: 1px solid var(--eb-border-color);
+  }
+
+  .eb-table {
+    width: 100%;
+    max-width: 100%;
+
+    .eb-table--header {
+      background-color: var(--eb-bg-color-page);
+      .eb-table--row {
+        .eb-table--cell {
+          color: var(--eb-text-color-primary);
+          font-weight: 500;
+          font-size: 12px;
+          border: 0 !important;
+          padding: 15px 8px !important
+        }
+      }
+    }
+
+    .eb-table--body {
+      .eb-table--row {
+        border-bottom: 1px solid var(--eb-border-color);
+        background-color: #fff;
+
+        .eb-table--cell {
+          padding: 12px 8px;
+          vertical-align: middle;
+          color: var(--eb-text-color-secondery);
+          font-size: 13px;
+          font-weight: 400;
+          position: relative;
+          line-height: 18px !important;
+          border: 0 !important;
+        }
+      }
+    }
+  }
+
+
+}
