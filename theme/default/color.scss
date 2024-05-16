@@ -23,7 +23,8 @@ $base-color-names: primary, success, danger, warning, info;
   --eb-text-color: #333333;
   --eb-text-color-primary: #000000;
   --eb-text-color-secondery: #666666;
-  --eb-border-color: #dcdfe6;
+  --eb-text-color-placeholder: #9FAAB7;
+  --eb-border-color: #9FAAB7;
 
   @each $color-name in $base-color-names {
     $base-color: $color-info;
