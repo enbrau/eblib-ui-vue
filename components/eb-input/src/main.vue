@@ -1,13 +1,16 @@
 <template>
   <div class="eb-input">
     <label class="legend-top">
-      <input :value="value" :placeholder="placeholderText" />
-      <span v-if="label">{{ label }}</span>
+      <input :value="value" :placeholder="finalPlaceholder" />
+      <span v-if="showLabel">{{ finalLabel }}</span>
     </label>
   </div>
 </template>
 
 <script>
+import { inject, computed } from 'vue'
+import { FORM_ITEM } from '../../eb-form/src/form.js'
+
 export default {
   name: 'EbInput',
   emits: ['update:modelValue'],
@@ -29,6 +32,33 @@ export default {
       default: 'default'
     }
   },
+  setup(props) {
+    const itemStore = inject(FORM_ITEM.STORE)
+
+    if (props.label) {
+      itemStore.dispatch('setLabel', props.label)
+    }
+
+    const finalLabel = computed(() => {
+      return itemStore.state.label || props.label
+    })
+
+    const finalPlaceholder = computed(() => {
+      return (finalLabel.value || props.placeholder) ?
+              (finalLabel.value ? `${finalLabel.value}` : '') + (props.placeholder ? ', ' + props.placeholder : '') :
+              null
+    })
+
+    const showLabel = computed(() => {
+      return itemStore.state.labelPosition === 'inner'
+    })
+
+    return {
+      finalLabel,
+      finalPlaceholder,
+      showLabel
+    }
+  },
   computed: {
     value: {
       get() {
@@ -37,9 +67,6 @@ export default {
       set(value) {
         this.$emit('update:modelValue', value)
       }
-    },
-    placeholderText() {
-      return (this.label ? `${this.label}, ` : '') + (this.placeholder || '')
     }
   }
 }
