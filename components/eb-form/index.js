@@ -1,7 +1,13 @@
-import EbForm from "./src/main.vue"
+import EbFormCmpt from "./src/EbForm.vue"
+import EbFormItemCmpt from "./src/EbFormItem.vue"
 
-EbForm.install = function (Vue) {
-  Vue.component(EbForm.name, EbForm)
+EbFormCmpt.install = function (Vue) {
+  Vue.component(EbFormCmpt.name, EbFormCmpt)
 }
 
-export default EbForm
+EbFormItemCmpt.install = function (Vue) {
+  Vue.component(EbFormItemCmpt.name, EbFormItemCmpt)
+}
+
+export const EbForm = EbFormCmpt
+export const EbFormItem = EbFormItemCmpt

@@ -33,24 +33,24 @@ export default {
     }
   },
   setup(props) {
-    const itemStore = inject(FORM_ITEM.STORE)
+    const itemStore = inject(FORM_ITEM.STORE, null)
 
-    if (props.label) {
+    if (itemStore && props.label) {
       itemStore.dispatch('setLabel', props.label)
     }
 
     const finalLabel = computed(() => {
-      return itemStore.state.label || props.label
+      return itemStore ? itemStore.state.label : null || props.label
     })
 
     const finalPlaceholder = computed(() => {
       return (finalLabel.value || props.placeholder) ?
-              (finalLabel.value ? `${finalLabel.value}` : '') + (props.placeholder ? ', ' + props.placeholder : '') :
+              (finalLabel.value ? `${finalLabel.value}` : '') + (props.placeholder ? (finalLabel.value ? ', ' : '') + props.placeholder : '') :
               null
     })
 
     const showLabel = computed(() => {
-      return itemStore.state.labelPosition === 'inner'
+      return !itemStore || itemStore.state.labelPosition === 'inner'
     })
 
     return {

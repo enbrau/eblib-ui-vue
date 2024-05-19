@@ -28,7 +28,6 @@ export default defineComponent({
     },
     /**
      * Width of label
-     * e.g. '50px'. All its direct child form items will inherit this value. auto is supported.
      */
     labelWidth: {
       type:[Number, String],

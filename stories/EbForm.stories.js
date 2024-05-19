@@ -1,8 +1,6 @@
 import '../theme/index.scss'
 
-import EbForm from '../components/eb-form/src/main.vue'
-import EbFormItem from '../components/eb-form-item/src/main.vue'
-import EbInput from '../components/eb-input/src/main.vue'
+import { EbForm, EbFormItem, EbInput } from '../components'
 
 import { ref } from 'vue'
 

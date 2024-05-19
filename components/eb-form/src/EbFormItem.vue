@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import { inject, provide, computed, watch } from 'vue'
-import { FORM, FORM_ITEM, createItemStore } from '../../eb-form/src/form.js'
+import { defineComponent, inject, provide, computed, watch } from 'vue'
+import { FORM, FORM_ITEM, createItemStore } from './form.js'
 
-export default {
+export default defineComponent({
   name: 'EbFormItem',
   props: {
     /**
@@ -82,7 +82,7 @@ export default {
       classNames
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

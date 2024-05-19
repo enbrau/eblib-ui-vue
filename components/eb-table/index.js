@@ -1,12 +1,13 @@
-import EbTable from './src/EbTable.vue'
-import EbTableColumn from './src/EbTableColumn'
+import EbTableCmpt from './src/EbTable.vue'
+import EbTableColumnCmpt from './src/EbTableColumn.vue'
 
-EbTable.install =  function (Vue) {
-  Vue.component(EbTable.name, EbTable)
+EbTableCmpt.install =  function (Vue) {
+  Vue.component(EbTableCmpt.name, EbTableCmpt)
 }
 
-EbTableColumn.install = function (Vue) {
-  Vue.component(EbTableColumn.name, EbTableColumn)
+EbTableColumnCmpt.install = function (Vue) {
+  Vue.component(EbTableColumnCmpt.name, EbTableColumnCmpt)
 }
 
-export { EbTable, EbTableColumn as default }
+export const EbTable = EbTableCmpt
+export const EbTableColumn = EbTableColumnCmpt
