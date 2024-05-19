@@ -25,7 +25,7 @@
     "core-js": "^3.8.3",
     "interactjs": "^1.10.27",
     "jsqr": "^1.4.0",
-    "vue": "^3.2.13",
+    "vue": "^3.4.27",
     "webrtc-adapter": "^9.0.1"
   },
   "devDependencies": {
