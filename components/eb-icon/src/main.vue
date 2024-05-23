@@ -1,0 +1,34 @@
+<template>
+  <i class="eb-icon">
+    <slot></slot>
+  </i>
+</template>
+
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'EbIcon'
+})
+</script>
+
+<style lang="scss">
+.eb-icon {
+  --color: inherit;
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--color);
+  font-size: inherit;
+
+  svg {
+    height: 1em;
+    width: 1em;
+  }
+}
+</style>

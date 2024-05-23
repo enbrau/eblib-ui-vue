@@ -1,0 +1,41 @@
+.demo-icon-list {
+  overflow: hidden;
+  list-style: none;
+  padding: 0 !important;
+  border-left: 1px solid var(--eb-border-color);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  .icon-item {
+    text-align: center;
+    color: var(--eb-text-color-regular);
+    height: 90px;
+    font-size: 13px;
+    border-right: 1px solid var(--eb-border-color);
+    border-bottom: 1px solid var(--eb-border-color);
+    transition: background-color var(--el-transition-duration);
+
+    &:nth-child(-n+6) {
+      border-top: 1px solid var(--eb-border-color);
+    }
+
+    &:hover {
+      background-color: var(--eb-border-color-extra-light);
+      color: var(--brand-color-light);
+    }
+
+    .demo-svg-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      cursor: pointer;
+
+      .icon-name {
+        margin-top: 8px;
+      }
+    }
+  }
+}

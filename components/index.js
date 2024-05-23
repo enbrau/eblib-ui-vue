@@ -5,6 +5,7 @@ import '../theme/index.scss'
 import EbRow from './eb-row'
 import EbCol from './eb-col'
 import EbButton from './eb-button'
+import EbIcon from './eb-icon'
 import EbExample from './eb-example'
 
 import EbCamera from './eb-camera'
@@ -16,7 +17,7 @@ import { EbForm, EbFormItem } from './eb-form'
 import EbInput from './eb-input'
 
 const components = { 
-  EbRow, EbCol, EbButton, EbExample, EbCamera, EbCameraInvoker, EbTable, EbTableColumn, EbForm, EbFormItem, EbInput
+  EbRow, EbCol, EbButton, EbIcon, EbExample, EbCamera, EbCameraInvoker, EbTable, EbTableColumn, EbForm, EbFormItem, EbInput
 }
 
 export default {
@@ -35,11 +36,11 @@ export {
   eblib,
   EbRow, EbCol, 
   EbButton, 
+  EbIcon,
   EbExample, 
   EbCamera, 
   EbCameraInvoker, 
-  EbTable, 
-  EbTableColumn, 
+  EbTable, EbTableColumn, 
   EbForm, 
   EbFormItem, 
   EbInput
